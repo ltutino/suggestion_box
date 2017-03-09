@@ -7,7 +7,7 @@ class SuggestionsController < ApplicationController
   def create
     @suggestion = Suggestion.new(suggestion_params)
     if @suggestion.save
-      flash[:notice] = "Todo was created successfully!"
+      flash[:notice] = "Your suggestion has been sent. Thank you!"
       redirect_to new_suggestion_path
     else
       render 'new'
