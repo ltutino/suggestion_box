@@ -1,14 +1,6 @@
 <h1>Morgan and Morgan</h1>
 <h2>Suggestion Box</h2>
 
-<% if @suggestion.errors.any? %>
-  <h2>The following errors prevented the todo from being saved</h2>
-  <ul>
-    <% @suggestion.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
 <%= form_for @suggestion do |f| %>
   <p>
     <%= f.label :name %> <br>
@@ -29,4 +21,12 @@
     <%= f.submit %>
   </p>
 
+<% end %>
+
+<% if @suggestion.errors.any? %>
+  <ul>
+    <% @suggestion.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
 <% end %>
